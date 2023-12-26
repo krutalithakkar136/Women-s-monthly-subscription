@@ -1,0 +1,687 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="">
+
+  <title> WMS </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <img src="{% static 'images/hero-bg.png' %}" alt="">
+    </div>
+  <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <span>
+              Women's Monthly Subscription
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About & Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'departments' %}">Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
+              </li>
+            {% if request.session.email %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'product' %}">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'change_password' %}">Change Password</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Log Out({{request.session.fname}})</a>
+              </li>
+              <li>
+                <a href="{% url 'profile' %}">
+                <img src="{{request.session.profile_pic}}" width="40px" height="40px">
+                </a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+              </li>
+            {% endif %}
+              
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+</div>
+
+  <!-- about section -->
+
+<section class="department_section layout_padding">
+    <div class="department_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <div class="whole">
+            <h2 style="color:green; text-align:center">
+              Frequently Asked Questions
+            </h2>
+            <br/><br/>
+            <p style="font-size: 25px;text-align: left; font-style: italic;">INDEX:<br/><a href="#period" > ·  FAQs for a period tracking application</a> <br/> <a href="#myth" > ·   Burst the myths!</a> <br/> <a href="#info" > ·   FAQs about our website</a> <br/> <a href="#sanitary" > ·   FAQs about sanitary products</a></p>
+      <br/><br/>
+          </div>
+
+          <div class="layout">
+
+            <div class="whole" id="period">
+              <h2 style="text-align: left;">
+                FAQs for a period tracking application
+              </h2>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What are the benefits of using a period tracking application?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>A: 1. Accurate predictions: Period tracking applications offer accurate predictions based on previous menstrual cycles, which can help individuals better plan their activities and anticipate any physical or emotional changes that typically occur during their menstrual cycle.<br>
+
+                2. Easy tracking: These apps make it easy and convenient to track periods and any related symptoms or changes, which can be helpful for sharing information with healthcare providers or identifying any potential irregularities or concerns.<br>
+
+                3. Improved health awareness: Tracking menstrual cycles can help individuals become more aware of their overall health status and any potential issues, including hormonal imbalances, nutritional deficiencies, or other health concerns that may be impacting their menstrual cycles.<br>
+
+                4. Personalized insights: Our period tracking applications offer personalized insights and recommendations based on an individual's specific menstrual cycle patterns, which can help optimize reproductive health.<br>
+
+                5. Increased comfort: For individuals who experience discomfort or pain during their menstrual cycles, tracking these symptoms and identifying triggers can be helpful in managing these symptoms and reducing discomfort over time.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I share my period tracking data with my healthcare provider?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can share your period tracking data with your healthcare provider. Our period tracking app and tools allow you to export and share your data with your healthcare provider. This can be helpful for monitoring your menstrual cycle, identifying irregularities or changes, and tracking symptoms such as cramps or mood changes. 
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I set reminders for birth control pills, appointments, and other healthcare events?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can set reminders for birth control pills, appointments, and other healthcare events. Some birth control pill brands even have apps that remind you to take the pill at a specific time every day. You can also set reminders on your smartphone's calendar or use reminder services like Google Keep or Apple Reminders. Additionally, healthcare providers may have online portals that allow you to set reminders for upcoming appointments or tests. 
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I use a period tracking application if I have an irregular cycle?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can still use a period tracking application even if you have an irregular cycle. In fact, tracking your menstrual cycles can be especially helpful in identifying patterns and fluctuations in your cycle length and symptoms. Our period tracking app have features that allow you to log irregularities in your cycle, such as missed periods or abnormal bleeding, and can provide insights and predictions based on your historical data. It may take a little longer to establish a reliable pattern, but with consistent tracking, you can still gain valuable information about your reproductive health. 
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is there a cost to use a period tracking application?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: It depends on the application. Some period tracking apps are free to use, while others may require a one-time purchase or a subscription fee to access the full range of features and services. It's always a good idea to check the pricing and payment options before selecting an app to use.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What is a period tracking application?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: A period tracking application is a mobile app that helps you track your menstrual cycle. It predicts when your next period will start, logs your period symptoms, and reminds you to take your birth control pills.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: How do I use a period tracking application?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: To use a period tracking application, you first need to download and install the app on your mobile device. Then, you can input the first day of your period and track it for the next few months. The app analyses your menstrual cycle data and predicts when your next period will start.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What information should I enter into a period tracking application?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: You should enter the dates of your period, the length of your menstrual cycle, the severity of your period symptoms, and the type of birth control you are using. You can also log any irregularities in your menstrual cycle, such as missed periods or spotting.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can period tracking applications be used for fertility tracking?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, some period tracking applications have a fertility tracking feature that helps you determine when you are fertile and which days are safe to have unprotected sex. These apps rely on the data you enter about your menstrual cycle and other health factors, such as basal body temperature and cervical mucus.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Are my data in a period tracking application safe and secure?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, most period tracking applications use secure servers and encrypted networks to protect your data. However, it is recommended that you read the app's privacy policy and terms of use before you start using the app.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Are period tracking applications accurate?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Period tracking applications use algorithms and data analysis to predict when your next period will start and which days are fertile. However, the accuracy of the predictions varies from app to app and from person to person. It's important to remember that the predictions are only estimates, and you should always consult with a healthcare provider for any concerns about your menstrual cycle or fertility.
+                </p>
+              </div>
+            </div>
+
+            <div class="whole" id="info">
+              <h2 style="text-align: left;">
+                <br/><br/>
+                FAQs about our website
+              </h2>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What is the app about?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: This app provides information about menstruation, including its symptoms, tracking menstrual cycle, and answering frequently asked questions about menstruation.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is the app free to download and use?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app is free to download and use.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is the app available on both iOS and Android?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app is available on both iOS and Android platforms.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I track my menstrual cycle using this app?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can track your menstrual cycle using this app.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Will the app remind me about my upcoming period?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app can send you reminders about your upcoming period based on your tracked cycle.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I use this app to learn about menstrual hygiene?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app has a section dedicated to menstrual hygiene and provides information on maintaining healthy menstrual practices.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I ask questions about menstruation on this app?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app provides a frequently asked questions section where you can find answers to common questions about menstruation.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is the app safe and reliable?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, the app is safe and reliable. It provides information from trusted sources and medical professionals.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I customize the app's settings?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can customize certain settings such as the reminder frequency and maximum notification times per day.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Does the app have any community features or social networking capabilities?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, the app does not have any community features or social networking capabilities.
+                </p>
+              </div>
+            </div>
+
+            <div class="whole" id="sanitary">
+              <h2 style="text-align: left;">
+                <br/><br/>
+                FAQs about Sanitary Products
+              </h2>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What products are included in the menstruation category?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Typically, this category includes products like pads, tampons, menstrual cups, period underwear, menstrual cramp relief products, menstrual cycle tracking apps, and more.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: How do I know which size of menstrual products to buy?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: It is important to follow the manufacturer's size chart or recommendations to choose the right size for you. The size is usually determined by factors such as your age, flow intensity, and vaginal anatomy.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: What is eco-friendly period product?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Eco-friendly period products are products made from biodegradable or compostable materials. These products are environmentally responsible and do not harm the planet.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can menstrual cups be reused?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, menstrual cups can be reused many times and can last for years if properly cared for. The cups should be emptied and cleaned every 8-12 hours and sterilized before and after every cycle.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I swim while wearing menstrual products?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can. Tampons and menstrual cups are suitable for use during swimming. They create a seal that prevents menstrual blood from leaking out and should not cause any discomfort while swimming.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can period underwear be used as a replacement for pads and tampons?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, period underwear can be used as a standalone option during menstruation or as a backup option with menstrual cups or tampons.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: How can I track my menstrual cycle?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: There are many period tracking and fertility apps available that can help you track your menstrual cycle, predict your ovulation and fertility window, and inform you of your period start and end dates.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can menstrual products cause irritation or infections?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: This is possible, especially if you use the wrong size or type of product, wear it for too long, or do not change it often enough. It is important to follow the manufacturer's instructions for use, hygiene, and safety to reduce the risk of irritation or infection.
+                </p>
+              </div>
+            </div>
+
+            <div class="whole" id="myth">
+              <h2 style="text-align: left;">
+                <br/><br/>
+                Burst the myths!
+              </h2>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Will having my period attract bears or other wild animals?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, this is a myth. Bears and other wild animals are not attracted to menstrual blood.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I go swimming or take a bath during my period?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can. Using a tampon or menstrual cup can make swimming or bathing during your period possible.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Does menstruation only happen to people who are assigned female at birth?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, anyone with a uterus can menstruate, regardless of their gender identity.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I exercise during my period?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, you can. Exercise can actually help alleviate menstrual cramps and improve mood.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Do I have to use pads or tampons during my period?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, there are multiple products available to manage your period, such as menstrual cups, menstrual discs, and period underwear.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Can I get pregnant while on my period?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: Yes, it is possible to get pregnant during your period as sperm can live inside the body for up to five days.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Does having menstrual cramps mean there is something wrong with me?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, having menstrual cramps is a common symptom of menstruation and does not necessarily indicate a medical problem.
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is it necessary to change my pad or tampon every hour?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, the frequency of changing pads or tampons depends on a person's flow. It is recommended to change pads or tampons every 4-6 hours. 
+                </p>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__question">
+                <p>Q: Is menstrual blood dirty or impure?</p>
+              </div>
+              <div class="accordion__answer">
+                <p>
+                  A: No, menstrual blood is a natural bodily function and is not dirty or impure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- end about section -->
+
+
+<!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <p>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  <a href="https://goo.gl/maps/cDHUrhqyom455svq7" target="_blank">
+                  Park Avenue, C.G.Road, Ahmedabad.</a>
+                </span>
+              </p>
+              <p>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  <a href="tel:+91 1234567890">
+                  Call +91 1234567890</a>
+                </span>
+              </p>
+              <p>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  <a href="mailto:womensmonthlysub@gmail.com">womensmonthlysub@gmail.com
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+             One step solution for all of your problems!Think of it as your personal diary!
+            </p>
+            <p>
+              Keep track of your periods with WOMAN'S MONTHLY SUBSCRIPTION with monthly reminders and health charts.
+            </p>
+            <p>
+              Get appointment with gynaecologist and buy sanitary items at reasonable rates!
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="active" href="\">
+                Home
+              </a>
+              <a class="" href="{% url 'about' %}">
+                About
+              </a>
+              <a class="" href="{% url 'departments' %}">
+                Informations
+              </a>
+              <a class="" href="{% url 'doctors' %}">
+                Doctors
+              </a>
+              <a class="" href="{% url 'contact' %}">
+                Contact Us
+              </a>
+              <a class="" href="{% url 'faq' %}">
+                FAQ
+              </a>
+              {% if request.session.email %}
+              <a class="" href="{% url 'product' %}">
+                Products
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit" onclick="return confirm('Are you sure you want to subscribe?');">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+  
+</body>
+
+</html>
+{% endblock %}

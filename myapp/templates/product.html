@@ -1,0 +1,447 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="">
+
+  <title> WMS </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <img src="{% static 'images/hero-bg.png' %}" alt="">
+    </div>
+  <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <span>
+              Women's Monthly Subscription
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About & Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'departments' %}">Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
+              </li>
+            {% if request.session.email %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'product' %}">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'change_password' %}">Change Password</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Log Out({{request.session.fname}})</a>
+              </li>
+              <li>
+                <a href="{% url 'profile' %}">
+                <img src="{{request.session.profile_pic}}" width="40px" height="40px">
+                </a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+              </li>
+            {% endif %}
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+</div>
+  <!-- department section -->
+
+  <section class="department_section layout_padding">
+    <div class="department_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            SANITARY PRODUCTS
+          </h2>
+          <p>
+            Buy sanitary products and medicines to relieve menstruation related pains at reasonable rates.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/pads.jpeg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  PADS
+                </h5>
+                <p><a href="https://www.amazon.in/s?k=sanitary+pads+for+women&sprefix=sanitary+%2Caps%2C231&ref=nb_sb_ss_ts-doa-p_1_9" target="_blank">
+                  Buy Pads at Amazon.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/tampon.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  TAMPONS
+                </h5>
+                <p><a href="https://www.amazon.in/s?k=sanitary+tampons+for+women&crid=1JYMR80NMXHEM&sprefix=sanitary+tampons+for+women%2Caps%2C314&ref=nb_sb_noss_1" target="_blank">
+                  Buy Tampons at Amazon.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cups.jpeg' %}" alt="" >
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Menstrual Cups
+                </h5>
+                <p><a href="https://www.amazon.in/s?k=sanitary+cups+for+women&crid=28YGFQVEAPN7S&sprefix=sanitary+cups+for+women%2Caps%2C324&ref=nb_sb_noss_1" target="_blank">
+                  Buy Menstrual Cups at Amazon.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <a href="{% url 'menstrual_hygiene' %}">
+                <img src="{% static 'images/medicine.png' %}" alt="" >
+              </div></a>
+              <div class="detail-box">
+                <h5>
+                  Medicines
+                </h5>
+                <p><a href="https://www.amazon.in/s?k=menstrual+medicine+for+women&crid=1UIE8I1YT5R72&sprefix=menstrual+medicine+for+women%2Caps%2C316&ref=nb_sb_noss" target="_blank">
+                  Buy Medicines at Amazon.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/pads.jpeg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  PADS
+                </h5>
+                <p><a href="https://www.nykaa.com/bath-body/feminine-hygiene/sanitary-napkins/c/391" target="_blank">
+                  Buy Pads at Nykaa.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/tampon.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  TAMPONS
+                </h5>
+                <p><a href="https://www.nykaa.com/evereve-tampons-for-regular-menstrual-flow/p/8899597?ptype=product&skuId=8899597&utm_content=ads&utm_source=GooglePaid&utm_medium=PLA&utm_campaign=performancemaxnca&gclid=Cj0KCQjwnMWkBhDLARIsAHBOftomz0SGH8aVDbCwZ7w0xhJEXYdPW6vmTPj8Gg2ek2p-8e-BSDtX9xEaApD8EALw_wcB" target="_blank">
+                  Buy Tampons at Nykaa.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cups.jpeg' %}" alt="" >
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Menstrual Cups
+                </h5>
+                <p><a href="https://www.nykaa.com/sirona-fda-approved-reusable-menstrual-cup-with-medical-grade-silicone-medium/p/209048?ptype=product&skuId=209048&utm_content=ads&utm_source=GooglePaid&utm_medium=PLA&utm_campaign=PerformanceMaxFullSiteATC&gclid=Cj0KCQjwnMWkBhDLARIsAHBOftqHZjylHmUe8NQOHO52rtEntELsHq-hSISPTgC0JHxCkkUwbAIud_YaAix5EALw_wcB" target="_blank">
+                  Buy Menstrual Cups at Nykaa.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <a href="{% url 'menstrual_hygiene' %}">
+                <img src="{% static 'images/medicine.png' %}" alt="" >
+              </div></a>
+              <div class="detail-box">
+                <h5>
+                  Medicines
+                </h5>
+                <p><a href="https://www.nykaa.com/wellness/pain-relief/period-cramps/c/19869" target="_blank">
+                  Buy Medicines at Nykaa.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/pads.jpeg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  PADS
+                </h5>
+                <p><a href="https://www.flipkart.com/beauty-and-grooming/womens-personal-hygiene/sanitary-pad/pr?sid=g9b%2Ciph%2Cjth" target="_blank">
+                  Buy Pads at Flipkart.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/tampon.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  TAMPONS
+                </h5>
+                <p><a href="https://www.flipkart.com/beauty-and-grooming/womens-personal-hygiene/tampons/pr?sid=g9b%2Ciph%2Cdle" target="_blank">
+                  Buy Tampons at Flipkart.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cups.jpeg' %}" alt="" >
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Menstrual Cups
+                </h5>
+                <p><a href="https://www.flipkart.com/beauty-and-grooming/womens-personal-hygiene/menstrual-cup/pr?sid=g9b%2Ciph%2Cflg" target="_blank">
+                  Buy Menstrual Cups at Flipkart.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <a href="{% url 'menstrual_hygiene' %}">
+                <img src="{% static 'images/medicine.png' %}" alt="" >
+              </div></a>
+              <div class="detail-box">
+                <h5>
+                  Medicines
+                </h5>
+                <p><a href="https://healthplus.flipkart.com/index.php/product/generic/otm-menstrual-problems/2918" target="_blank">
+                  Buy Medicines at Flipkart.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="btn-box">
+          <a href="">
+            View All
+          </a>
+        </div>-->
+      </div>
+    </div>
+  </section>
+
+  <!-- end department section -->
+
+<!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <p>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  <a href="https://goo.gl/maps/cDHUrhqyom455svq7" target="_blank">
+                  Park Avenue, C.G.Road, Ahmedabad.</a>
+                </span>
+              </p>
+              <p>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  <a href="tel:+91 1234567890">
+                  Call +91 1234567890</a>
+                </span>
+              </p>
+              <p>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  <a href="mailto:womensmonthlysub@gmail.com">womensmonthlysub@gmail.com
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+             One step solution for all of your problems!Think of it as your personal diary!
+            </p>
+            <p>
+              Keep track of your periods with WOMAN'S MONTHLY SUBSCRIPTION with monthly reminders and health charts.
+            </p>
+            <p>
+              Get appointment with gynaecologist and buy sanitary items at reasonable rates!
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="active" href="\">
+                Home
+              </a>
+              <a class="" href="{% url 'about' %}">
+                About
+              </a>
+              <a class="" href="{% url 'departments' %}">
+                Informations
+              </a>
+              <a class="" href="{% url 'doctors' %}">
+                Doctors
+              </a>
+              <a class="" href="{% url 'contact' %}">
+                Contact Us
+              </a>
+              <a class="" href="{% url 'faq' %}">
+                FAQ
+              </a>
+              {% if request.session.email %}
+              <a class="" href="{% url 'product' %}">
+                Products
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit" onclick="return confirm('Are you sure you want to subscribe?');">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
+{% endblock %}
